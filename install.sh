@@ -7,20 +7,7 @@ FLAKE_ATTR="nixos"
 DISKO_CONFIG="./nixos/disko-config.nix"
 MOUNT_POINT="/mnt"
 
-# Substituters from your configuration
-declare -a SUBSTITUTERS=(
-  "https://aseipp-nix-cache.global.ssl.fastly.net"
-  "https://attic.xuyh0120.win/lantian"
-  "https://cache.garnix.io"
-  "https://cachyos.org/nh"
-  "https://cache.nixos.org"
-)
 
-declare -a TRUSTED_KEYS=(
-  "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
-  "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-  "cachyos.org:IjJiNvc9Yg+4+H7D0Nrf/6KJjHVt2Z7F8M7mlPqCPFQ="
-)
 
 # Colors for output
 RED='\033[0;31m'
@@ -104,15 +91,6 @@ fi
 # PREPARATION PHASE
 # ============================================================================
 
-log_info "Configuring Nix substituters..."
-
-# Create temporary nix.conf with substituters
-TEMP_NIX_CONF=$(mktemp)
-{
-  echo "substituters = ${SUBSTITUTERS[*]}"
-  echo "trusted-public-keys = ${TRUSTED_KEYS[*]}"
-  echo "experimental-features = nix-command flakes"
-} > "$TEMP_NIX_CONF"
 
 
 
