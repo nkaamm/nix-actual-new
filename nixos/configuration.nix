@@ -83,6 +83,7 @@ in {
   settings = {
     trusted-users = [ "root" "@wheel" ];
     substituters = [ 
+      "https://aseipp-nix-cache.global.ssl.fastly.net"
       "https://attic.xuyh0120.win/lantian" 
       "https://cache.garnix.io"
     ];
