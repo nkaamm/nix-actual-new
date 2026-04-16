@@ -1,0 +1,7 @@
+diff --git a/src/backend/udev/mode.rs b/src/backend/udev/mode.rs
+index 0000000..0000000 100644
+--- a/src/backend/udev/mode.rs
++++ b/src/backend/udev/mode.rs
+@@ -146,7 +146,7 @@ fn some_function(...) {
+-        name,
++        name: name.map(|b| b as i8),

@@ -1,0 +1,21 @@
+# Nix
+result
+result-*
+.direnv/
+.venv/
+node_modules/
+dist/
+build/
+
+# Editor/OS
+.DS_Store
+*.swp
+*.swo
+*~
+.home.nix.kate-swp
+.idea/
+.vscode/
+.kate-swp
+
+# Logs
+*.log
