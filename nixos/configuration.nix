@@ -24,6 +24,7 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./nvidia.nix
+    ./disko-config.nix
     inputs.fht-compositor.nixosModules.default
   ];
 

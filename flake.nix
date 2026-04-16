@@ -55,6 +55,11 @@
       url = "github:xddxdd/nix-cachyos-kernel/master";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = {
@@ -99,6 +104,7 @@ nixosConfigurations = {
   nixos = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs; };
 modules = [
+  inputs.disko.nixosModules.disko
   ./nixos/configuration.nix
 
   {
