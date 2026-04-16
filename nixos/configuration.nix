@@ -65,7 +65,6 @@ overlays = [
 
   # linux Kernel
   #boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
 
 
   # Bootloader.
@@ -108,6 +107,8 @@ in {
   nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
 };
 
+  
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
   services.flatpak.enable = true;
 
 
