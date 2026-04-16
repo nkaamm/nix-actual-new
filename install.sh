@@ -114,15 +114,7 @@ TEMP_NIX_CONF=$(mktemp)
   echo "experimental-features = nix-command flakes"
 } > "$TEMP_NIX_CONF"
 
-# Backup existing nix.conf if it exists
-if [ -f /etc/nix/nix.conf ]; then
-  cp /etc/nix/nix.conf /etc/nix/nix.conf.backup
-  log_info "Backed up /etc/nix/nix.conf to /etc/nix/nix.conf.backup"
-fi
 
-# Append substituters to nix.conf
-cat "$TEMP_NIX_CONF" >> /etc/nix/nix.conf
-log_success "Substituters configured"
 
 # ============================================================================
 # PARTITIONING PHASE
