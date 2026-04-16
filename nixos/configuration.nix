@@ -82,10 +82,12 @@ in {
   settings = {
     trusted-users = [ "root" "@wheel" ];
 substituters = [ 
-  "https://aseipp-nix-cache.global.ssl.fastly.net"
-  "https://attic.xuyh0120.win/lantian" 
+  "https://aseipp-nix-cache.global.ssl.fastly.net"  # Keep first - Fastly
+  "https://attic.xuyh0120.win/lantian"
   "https://cache.garnix.io"
-  "https://cachyos.org/nh"  # ← Add this
+  "https://cachyos.org/nh"
+  "https://nix-mirror.freetly.net"  # Fastly mirror as backup
+  "https://cache.nixos.org"  # Official - slowest, last resort
 ];
 trusted-public-keys = [ 
   "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" 
