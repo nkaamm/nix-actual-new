@@ -81,15 +81,17 @@ nix = let
 in {
   settings = {
     trusted-users = [ "root" "@wheel" ];
-    substituters = [ 
-      "https://aseipp-nix-cache.global.ssl.fastly.net"
-      "https://attic.xuyh0120.win/lantian" 
-      "https://cache.garnix.io"
-    ];
-    trusted-public-keys = [ 
-      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" 
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-    ];
+substituters = [ 
+  "https://aseipp-nix-cache.global.ssl.fastly.net"
+  "https://attic.xuyh0120.win/lantian" 
+  "https://cache.garnix.io"
+  "https://cachyos.org/nh"  # ← Add this
+];
+trusted-public-keys = [ 
+  "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" 
+  "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+  "cachyos.org:IjJiNvc9Yg+4+H7D0Nrf/6KJjHVt2Z7F8M7mlPqCPFQ="  # ← Add this
+];
 
     experimental-features = [ "nix-command" "flakes" ];
     flake-registry = "";
